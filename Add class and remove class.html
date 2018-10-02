@@ -1,0 +1,178 @@
+<!doctype.html>
+<html>
+<head>
+
+<title>ADD CLASS AND REMOVE CLASS</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<style>
+#demo{
+color:white;
+background:pink;
+margin:10px;
+padding:20px;
+width:300px;
+text-align:center;
+}
+.MyMenu{display:none;}
+.showMenu{display:block;}
+
+#openmenu{
+font-size:20px;
+background:black;
+cursor:pointer;
+color:white;
+}
+.mmm{
+font-size:20px;
+background:black;
+color:white;
+}
+.vip{
+font-size:41px;
+background:orange;
+color:white;
+width:1000px;
+margin:0 auto;
+height:200px;
+text-align:center;
+line-height:196px;
+transition: all 2s;
+transform:scaleX(0.8);
+}
+#demo31{
+font-size:25px;
+margin-top:10px;
+}
+.dip{
+font-size:41px;
+background:skyblue;
+color:white;
+width:1000px;
+margin:0 auto;
+height:200px;
+text-align:center;
+line-height:196px;
+}
+#h1{
+font-size:41px;
+background:skyblue;
+color:white;
+width:1000px;
+margin:0 auto;
+height:200px;
+text-align:center;
+line-height:190px;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+	<button id="openmenu"><i class="fas fa-align-justify"></i></button>
+	
+	<div id="demo" class="MyMenu">
+		<h1>MASUM BILLAH</h1>
+		<p>Masum is a Web Desinger.</p>
+	</div>
+	<br>
+	<button id="btn">click</button>
+	<div id="masum"> jdslfkl</div>
+	<br>
+	<form onsubmit="return false" action="" method="GET" id="logingForm">
+	
+	<input type="email" name="email"id="email" required/>
+	<input type="text" name="pwd" id="password" required/><span id="pwderromdg" style="color:red"></span>
+	<input type="submit" id="submit" />
+	<div id="showdata"></div>
+	</form>
+	<button  onclick="mybtn1()">Click</button>
+	<div id="demo31">This is Masum. I am a Webdesing and programar</div>
+	
+	<div id="demo30">This is Masum. I am a Webdesing and programar</div>
+	
+	<div id="demo29">This is Masum. I am a Webdesing and programar</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	<script>
+	
+	function mybtn1(){
+	var element = document.querySelector("#demo31");
+	element.classList.toggle("vip");
+	element.classList.toggle("dip");
+	}
+	
+
+	document.querySelector("#openmenu").addEventListener("dblclick",function(){
+	
+	if(document.querySelector(".showMenu")){
+	document.querySelector("#demo").classList.remove("showMenu")
+	}else{
+	document.querySelector("#demo").classList.add("showMenu")
+	}
+	});
+	document.querySelector("#openmenu").addEventListener("click",function(){
+	document.querySelector(".MyMenu").classList.toggle("showMenu")
+	
+	});
+	
+	document.querySelector("#masum").className="mmm"
+	document.querySelector("#btn").addEventListener("click",function(){
+	
+	document.querySelector("#masum").classList.remove("mmm");
+	
+	
+	})
+	
+	
+	
+	document.querySelector("#logingForm").addEventListener("submit",function(){
+	
+	var pwd = document.querySelector("#password").value;
+	var countPwd = pwd.length;
+	if(countPwd!=7) {
+	document.querySelector("#pwderromdg").innerHTML="Password is too Short!";
+	return false;
+	}else{
+		document.querySelector("#showdata").innerHTML=pwd;
+	 }
+	
+	});
+	
+	document.querySelector("#demo30").setAttribute("style","background:skyblue;font-size:25px;color:white;margin:20px;padding:10px;text-align:center;")
+
+	document.querySelector("#demo29").setAttribute("id","h1")
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</body>
+</html>
